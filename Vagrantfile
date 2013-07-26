@@ -17,12 +17,23 @@ Vagrant.configure("2") do |config|
     chef.cookbooks_path = "cookbooks"
 
     chef.add_recipe "yum"
+    chef.add_recipe("build-essential")
+    chef.add_recipe("openssl")
+    chef.add_recipe("xml")
     chef.add_recipe "apache2"
-    #chef.add_recipe "apache2::mod_php5"
-    #chef.add_recipe "apache2::mod_rewrite"
-    #chef.add_recipe "php"
-    #chef.add_recipe "php::module_mysql"
-    #chef.add_recipe "mysql::server"
+    chef.add_recipe "apache2::mod_php5"
+    chef.add_recipe "apache2::mod_rewrite"
+    chef.add_recipe "php"
+    chef.add_recipe "php::module_mysql"
+    chef.add_recipe "mysql::server"
+
+    chef.json.merge!({
+      "mysql" => {
+          "server_root_password" => "root",
+          "server_repl_password" => "root",
+          "server_debian_password" => "root"
+      }
+    })
 
   end
   
