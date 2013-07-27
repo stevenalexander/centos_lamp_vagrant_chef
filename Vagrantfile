@@ -26,6 +26,7 @@ Vagrant.configure("2") do |config|
     chef.add_recipe "php"
     chef.add_recipe "php::module_mysql"
     chef.add_recipe "mysql::server"
+    chef.add_recipe "composer"
 
     chef.json.merge!({
       "mysql" => {
