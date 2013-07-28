@@ -29,12 +29,6 @@ $ vagrant up
 
 ## Usage
 
-To ssh into box:
-
-	```bash
-$ vagrant ssh
-```
-
 Put PHP projects into the src folder and add additional virtual hosts.
 
 To connect to the db either ssh in or create a new user and use ssh tunnel connection, Sequel Pro settings are below:
