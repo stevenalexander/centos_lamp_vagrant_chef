@@ -1,4 +1,4 @@
-# CentOS 6.4 LAMP stack setup script using Vagrant / Chef
+# CentOS 6.4 LAMP
 
 Installs:
 
@@ -14,7 +14,7 @@ Installs:
 3. Clone this repo into a local folder
 
 	```bash
-$ git clone git@github.com:miccheng/vagrant-lamp-centos63.git phpdev
+$ git clone git@github.com:stevenalexander/centos_lamp_vagrant_chef.git
 $ git submodule init
 $ git submodule update
 ```
