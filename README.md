@@ -27,6 +27,8 @@ $ git submodule update
 $ vagrant up
 ```
 
+NOTE: You must be disconnected from any VPN affecting domain access otherwise you may see Vagrant freezing after booting the vm.
+
 ## Usage
 
 Put PHP projects into the src folder and add additional virtual hosts.
