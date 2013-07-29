@@ -7,7 +7,10 @@ Vagrant.configure("2") do |config|
   config.vm.box_url = "http://developer.nrel.gov/downloads/vagrant-boxes/CentOS-6.4-x86_64-v20130427.box"
   config.vm.hostname = "centos.lamp.com"
   config.vm.network :forwarded_port, guest: 80, host: 8080
-  config.vm.synced_folder "./src/", "/var/www/src/", :owner => 'apache', :group => 'apache'
+  
+  config.vm.synced_folder "./src/", "/var/www/src/"
+  # uncomment after initial vm setup and reload to make src writable for apache user/group for Zend
+  #config.vm.synced_folder "./src/", "/var/www/src/", :owner => 'apache', :group => 'apache'
 
   # chef-solo config
 
