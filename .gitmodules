@@ -19,3 +19,6 @@
 [submodule "cookbooks/xml"]
 	path = cookbooks/xml
 	url = https://github.com/opscode-cookbooks/xml
+[submodule "cookbooks/java"]
+	path = cookbooks/java
+	url = https://github.com/cookbooks/java

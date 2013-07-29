@@ -7,6 +7,7 @@ Vagrant.configure("2") do |config|
   config.vm.box_url = "http://developer.nrel.gov/downloads/vagrant-boxes/CentOS-6.4-x86_64-v20130427.box"
   config.vm.hostname = "centos.lamp.com"
   config.vm.network :forwarded_port, guest: 80, host: 8080
+  config.vm.network :forwarded_port, guest: 9000, host: 8081
   
   config.vm.synced_folder "./src/", "/var/www/src/"
   # uncomment after initial vm setup and reload to make src writable for apache user/group for Zend
@@ -29,6 +30,7 @@ Vagrant.configure("2") do |config|
     chef.add_recipe "php::module_mysql"
     chef.add_recipe "mysql::server"
     chef.add_recipe "composer"
+    chef.add_recipe "java"
 
     chef.json.merge!({
       "mysql" => {
